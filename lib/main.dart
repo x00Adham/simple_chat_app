@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:simple_chat_app/screens/login_screen.dart';
-import 'package:simple_chat_app/utils/themes/light_mode.dart';
+import 'package:simple_chat_app/utils/router/router.dart';
+import 'package:sizer/sizer.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const HatChat());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class HatChat extends StatelessWidget {
+  const HatChat({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      // theme: lightMode,
-      debugShowCheckedModeBanner: false,
-      home: WelcomePage(),
+    return Sizer(
+      builder: (context, orientation, deviceType) {
+        return MaterialApp.router(routerConfig: router);
+      },
     );
   }
 }
