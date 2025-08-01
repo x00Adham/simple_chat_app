@@ -31,7 +31,7 @@ class LogainPage extends StatelessWidget {
                   Expanded(
                     // flex: 3,
                     child: Center(
-                      child: Assets.lib.assets.images.whight.image(),
+                      child: Assets.lib.assets.images.wightBlack.image(),
                     ),
                   ),
                   Expanded(

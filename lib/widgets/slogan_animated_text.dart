@@ -16,14 +16,17 @@ class SloganAnimatedText extends StatelessWidget {
           // fontFamily: 'GoogleSansCode',
         ),
 
-        child: AnimatedTextKit(
-          repeatForever: true,
-          animatedTexts: [
-            TypewriterAnimatedText(
-              "Just You, Me, and Chat App.",
-              speed: const Duration(milliseconds: 80),
-            ),
-          ],
+        child: Align(
+          alignment: Alignment.center,
+          child: AnimatedTextKit(
+            repeatForever: true,
+            animatedTexts: [
+              TypewriterAnimatedText(
+                "Just You, Me, and Chat App.",
+                speed: const Duration(milliseconds: 80),
+              ),
+            ],
+          ),
         ),
       ),
     );

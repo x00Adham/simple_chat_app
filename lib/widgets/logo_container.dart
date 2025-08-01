@@ -16,7 +16,7 @@ class LogoContainer extends StatelessWidget {
           bottomRight: Radius.circular(40),
         ),
       ),
-      child: Center(child: Assets.lib.assets.images.whight.image()),
+      child: Center(child: Assets.lib.assets.images.wight.image()),
     );
   }
 }

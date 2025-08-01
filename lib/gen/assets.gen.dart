@@ -28,23 +28,23 @@ class $LibAssetsGen {
 class $LibAssetsImagesGen {
   const $LibAssetsImagesGen();
 
-  /// File path: lib/assets/images/black.png
-  AssetGenImage get black => const AssetGenImage('lib/assets/images/black.png');
+  /// File path: lib/assets/images/blue&back.png
+  AssetGenImage get blueBack =>
+      const AssetGenImage('lib/assets/images/blue&back.png');
 
-  /// File path: lib/assets/images/orange.png
-  AssetGenImage get orange =>
-      const AssetGenImage('lib/assets/images/orange.png');
+  /// File path: lib/assets/images/blue&wight.png
+  AssetGenImage get blueWight =>
+      const AssetGenImage('lib/assets/images/blue&wight.png');
 
-  /// File path: lib/assets/images/whight&balck.png
-  AssetGenImage get whightBalck =>
-      const AssetGenImage('lib/assets/images/whight&balck.png');
+  /// File path: lib/assets/images/wight&black.png
+  AssetGenImage get wightBlack =>
+      const AssetGenImage('lib/assets/images/wight&black.png');
 
-  /// File path: lib/assets/images/whight.png
-  AssetGenImage get whight =>
-      const AssetGenImage('lib/assets/images/whight.png');
+  /// File path: lib/assets/images/wight.png
+  AssetGenImage get wight => const AssetGenImage('lib/assets/images/wight.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [black, orange, whightBalck, whight];
+  List<AssetGenImage> get values => [blueBack, blueWight, wightBlack, wight];
 }
 
 class Assets {

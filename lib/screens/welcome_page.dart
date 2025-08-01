@@ -22,22 +22,18 @@ class WelcomePage extends StatelessWidget {
                 children: [
                   SloganAnimatedText(),
                   Spacer(),
-                  Row(
+                  Column(
                     children: [
-                      Expanded(
-                        child: MyButton(
-                          text: "Login",
-                          backgroundColor: MyColors.mainColor,
-                          pressed: () => GoRoute(path: "/login"),
-                        ),
+                      MyButton(
+                        text: "Login",
+                        backgroundColor: MyColors.mainColor,
+                        pressed: () => GoRoute(path: "/login"),
                       ),
-                      SizedBox(width: 10),
-                      Expanded(
-                        child: MyButton(
-                          text: "Sign Up",
-                          backgroundColor: MyColors.mainColor,
-                          pressed: () => GoRoute(path: "/signup"),
-                        ),
+                      SizedBox(height:10 ,),
+                      MyButton(
+                        text: "Sign Up",
+                        backgroundColor: MyColors.mainColor,
+                        pressed: () => GoRoute(path: "/signup"),
                       ),
                     ],
                   ),
