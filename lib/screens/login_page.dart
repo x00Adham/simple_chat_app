@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -7,8 +8,9 @@ import 'package:simple_chat_app/gen/assets.gen.dart';
 import 'package:simple_chat_app/widgets/custom_text_filed.dart';
 import 'package:simple_chat_app/widgets/my_button.dart';
 
-class LogainPage extends StatelessWidget {
-  LogainPage({super.key});
+class LoginPage extends StatelessWidget {
+  LoginPage({super.key});
+
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 

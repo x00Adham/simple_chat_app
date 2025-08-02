@@ -20,19 +20,19 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: "/login",
       builder: (BuildContext context, GoRouterState state) {
-        return  LogainPage();
+        return LoginPage();
       },
     ),
     GoRoute(
       path: "/signup",
       builder: (BuildContext context, GoRouterState state) {
-        return  SignupPage();
+        return SignupPage();
       },
     ),
     GoRoute(
       path: "/home",
       builder: (BuildContext context, GoRouterState state) {
-        return  HomePage();
+        return HomePage();
       },
     ),
   ],

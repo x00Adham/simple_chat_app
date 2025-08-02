@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:meta/meta.dart';
 import 'package:simple_chat_app/services/auth_service.dart';
 
@@ -11,11 +12,30 @@ class AuthCubit extends Cubit<AuthState> {
   Future<void> login(String email, String password) async {
     emit(AuthLoading());
     try {
-
       await _authService.loginWithEmailPassword(email, password);
       emit(AuthSuccess());
-    } catch (e) {
-      emit(AuthFailure(e.toString()));
+    } on FirebaseAuthException catch (e) {
+      String errorMessage;
+      switch (e.code) {
+        case 'invalid-email':
+          errorMessage = 'The email address is not valid.';
+          break;
+        case 'invalid-credential':
+          errorMessage = 'The email address is not valid.';
+          break;
+        case 'user-disabled':
+          errorMessage = 'This user has been disabled.';
+          break;
+        case 'user-not-found':
+          errorMessage = 'No user found for that email.';
+          break;
+        case 'wrong-password':
+          errorMessage = 'Incorrect password provided.';
+          break;
+        default:
+          errorMessage = 'An unknown error occurred. (${e.code})';
+      }
+      emit(AuthFailure(errorMessage));
     }
   }
 }
