@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class MyButton extends StatelessWidget {
   const MyButton({
@@ -30,7 +29,7 @@ class MyButton extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        onPressed: () => context.go("/login"),
+        onPressed: () => pressed(),
 
         child: Text(text),
       ),
