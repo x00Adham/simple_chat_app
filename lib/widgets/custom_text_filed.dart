@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:simple_chat_app/constants/colors.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key, required this.hint});
+  const CustomTextField({super.key, required this.hint, required this.controller});
   final String hint;
+  final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
     return StatefulBuilder(
@@ -13,12 +14,13 @@ class CustomTextField extends StatelessWidget {
         // (since StatelessWidget, use StatefulBuilder for local state)
         // We'll use a ValueNotifier for this
         final obscureNotifier = ValueNotifier<bool>(isPassword);
+       
 
         return ValueListenableBuilder<bool>(
           valueListenable: obscureNotifier,
           builder: (context, obscureText, _) {
             return TextField(
-              // controller: _emailController,
+              controller: controller,
               obscureText: isPassword ? obscureText : false,
               decoration: InputDecoration(
                 hintText: hint,
