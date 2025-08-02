@@ -27,7 +27,7 @@ class WelcomePage extends StatelessWidget {
                       MyButton(
                         text: "Login",
                         backgroundColor: MyColors.mainColor,
-                        pressed: () => GoRoute(path: "/login"),
+                        pressed: () => context.go("/login"),
                       ),
                       SizedBox(height:10 ,),
                       MyButton(

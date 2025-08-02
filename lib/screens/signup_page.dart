@@ -6,8 +6,9 @@ import 'package:simple_chat_app/widgets/custom_text_filed.dart';
 import 'package:simple_chat_app/widgets/my_button.dart';
 
 class SignupPage extends StatelessWidget {
-  const SignupPage({super.key});
-
+   SignupPage({super.key});
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,10 +57,14 @@ class SignupPage extends StatelessWidget {
                             const SizedBox(height: 20),
 
                             // Email field
-                            CustomTextField(hint: "Email or Phone Number"),
+                            CustomTextField(
+                              controller: emailController,
+                              hint: "Email"),
                             const SizedBox(height: 20),
 
-                            CustomTextField(hint: "Password"),
+                            CustomTextField(
+                              controller: passwordController,
+                              hint: "Password"),
 
                             SizedBox(height: 20),
                             SizedBox(
