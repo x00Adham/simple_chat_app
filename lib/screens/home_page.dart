@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:simple_chat_app/constants/colors.dart';
 import 'package:simple_chat_app/cubit/auth_cubit.dart';
 
@@ -19,6 +20,7 @@ class HomePage extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () {
                 context.read<AuthCubit>().logout();
+                context.go("/welcome");
               },
               child: Text("Logout"),
             ),

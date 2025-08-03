@@ -33,7 +33,7 @@ class WelcomePage extends StatelessWidget {
                       MyButton(
                         text: "Sign Up",
                         backgroundColor: MyColors.mainColor,
-                        pressed: () => GoRoute(path: "/signup"),
+                        pressed: () => context.go("/signup"),
                       ),
                     ],
                   ),

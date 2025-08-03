@@ -20,9 +20,7 @@ class LoginPage extends StatelessWidget {
         if (state is AuthSuccess) {
           context.go("/home");
         } else if (state is AuthFailure) {
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text(state.errorMessage)));
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.errorMessage)));
         }
       },
       child: BlocBuilder<AuthCubit, AuthState>(
@@ -103,7 +101,7 @@ class LoginPage extends StatelessWidget {
                                               : "Login",
                                       backgroundColor: Colors.black,
                                       pressed: () {
-                                        if (state is! AuthLoading) {
+                                      if (state is! AuthLoading) {
                                           context.read<AuthCubit>().login(
                                             emailController.text,
                                             passwordController.text,
