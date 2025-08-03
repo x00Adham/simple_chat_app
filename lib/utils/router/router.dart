@@ -5,6 +5,7 @@ import 'package:simple_chat_app/screens/Signup_page.dart';
 import 'package:simple_chat_app/screens/home_page.dart';
 import 'package:simple_chat_app/screens/login_page.dart';
 import 'package:simple_chat_app/screens/welcome_page.dart';
+import 'package:simple_chat_app/services/auth_gate.dart';
 
 void main() => runApp(const ChatApp());
 
@@ -13,6 +14,12 @@ final GoRouter router = GoRouter(
   routes: <RouteBase>[
     GoRoute(
       path: "/",
+      builder: (BuildContext context, GoRouterState state) {
+        return const AuthGate();
+      },
+    ),
+    GoRoute(
+      path: "/welcome",
       builder: (BuildContext context, GoRouterState state) {
         return const WelcomePage();
       },
