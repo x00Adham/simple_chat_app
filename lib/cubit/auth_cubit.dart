@@ -52,4 +52,32 @@ class AuthCubit extends Cubit<AuthState> {
       emit(Logoutfailure());
     }
   }
+
+  //* Sign up state management
+  Future<void> signUp(String email, String password) async {
+    emit(AuthLoading());
+    try {
+      await _authService.signUpWithEmailPassword(email, password);
+      emit(AuthSuccess());
+    } on FirebaseAuthException catch (e) {
+      String errorMessage;
+      switch (e.code) {
+        case 'email-already-in-use':
+          errorMessage = 'This email is already in use.';
+          break;
+        case 'invalid-email':
+          errorMessage = 'The email address is not valid.';
+          break;
+        case 'operation-not-allowed':
+          errorMessage = 'Email/password accounts are not enabled.';
+          break;
+        case 'weak-password':
+          errorMessage = 'The password is too weak.';
+          break;
+        default:
+          errorMessage = 'An unknown error occurred. (${e.code})';
+      }
+      emit(AuthFailure(errorMessage));
+    }
+  }
 }
