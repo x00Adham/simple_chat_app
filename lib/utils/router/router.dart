@@ -4,6 +4,8 @@ import 'package:simple_chat_app/main.dart';
 import 'package:simple_chat_app/screens/Signup_page.dart';
 import 'package:simple_chat_app/screens/home_page.dart';
 import 'package:simple_chat_app/screens/login_page.dart';
+import 'package:simple_chat_app/screens/profile_page.dart';
+import 'package:simple_chat_app/screens/settings_page.dart';
 import 'package:simple_chat_app/screens/welcome_page.dart';
 import 'package:simple_chat_app/services/auth_gate.dart';
 
@@ -40,6 +42,18 @@ final GoRouter router = GoRouter(
       path: "/home",
       builder: (BuildContext context, GoRouterState state) {
         return HomePage();
+      },
+    ),
+    GoRoute(
+      path: "/settings",
+      builder: (BuildContext context, GoRouterState state) {
+        return SettingsPage();
+      },
+    ),
+    GoRoute(
+      path: "/profile",
+      builder: (BuildContext context, GoRouterState state) {
+        return ProfilePage();
       },
     ),
   ],
