@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:meta/meta.dart';
@@ -8,7 +10,7 @@ part 'auth_state.dart';
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial());
   final AuthService _authService = AuthService();
-
+  //* login with email and password state management
   Future<void> login(String email, String password) async {
     emit(AuthLoading());
     try {
@@ -36,6 +38,18 @@ class AuthCubit extends Cubit<AuthState> {
           errorMessage = 'An unknown error occurred. (${e.code})';
       }
       emit(AuthFailure(errorMessage));
+    }
+  }
+
+  //* logout state management
+  Future<void> logout() async {
+    emit(AuthLoading());
+    try {
+      await _authService.signOut();
+      emit(LogoutSuccess());
+    } catch (e) {
+      log(e.toString());
+      emit(Logoutfailure());
     }
   }
 }

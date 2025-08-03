@@ -1,10 +1,10 @@
-import 'dart:developer';
+
 
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
-
+  //* login with email and password
   Future<UserCredential> loginWithEmailPassword(
     String email,
     String password,
@@ -15,4 +15,11 @@ class AuthService {
     );
     return userCredential;
   }
+
+  //* logout
+  Future signOut() async {
+    await _auth.signOut();
+  }
+
+  
 }
