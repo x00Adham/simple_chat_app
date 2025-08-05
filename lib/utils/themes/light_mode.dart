@@ -1,11 +1,60 @@
 import 'package:flutter/material.dart';
+import 'package:simple_chat_app/constants/colors.dart';
 
-ThemeData lightMode = ThemeData(
+const Color kPrimaryColor = MyColors.mainColor;
+
+final ThemeData lightTheme = ThemeData(
+  brightness: Brightness.light,
+  primaryColor: kPrimaryColor,
+  scaffoldBackgroundColor: Colors.white,
+  appBarTheme: AppBarTheme(
+    backgroundColor: kPrimaryColor,
+    foregroundColor: Colors.white,
+    elevation: 0,
+  ),
   colorScheme: ColorScheme.light(
-    surface: Colors.grey.shade300,
-    primary: Colors.grey.shade500,
-    secondary: Colors.grey.shade200,
-    tertiary: Colors.white,
-    inversePrimary: Colors.grey.shade900
-  )
+    primary: kPrimaryColor,
+    secondary: Colors.orangeAccent,
+    background: Colors.white,
+    onPrimary: Colors.white,
+    onBackground: Colors.black,
+    surface: Colors.white,
+    onSurface: Colors.black87,
+  ),
+  textTheme: const TextTheme(
+    bodyLarge: TextStyle(color: Colors.black),
+    bodyMedium: TextStyle(color: Colors.black87),
+  ),
+  floatingActionButtonTheme: FloatingActionButtonThemeData(
+    backgroundColor: kPrimaryColor,
+    foregroundColor: Colors.white,
+  ),
+);
+
+final ThemeData darkTheme = ThemeData(
+  brightness: Brightness.dark,
+  primaryColor: kPrimaryColor,
+  scaffoldBackgroundColor: const Color(0xFF121212),
+  appBarTheme: AppBarTheme(
+    backgroundColor: kPrimaryColor,
+    foregroundColor: Colors.white,
+    elevation: 0,
+  ),
+  colorScheme: ColorScheme.dark(
+    primary: kPrimaryColor,
+    secondary: Colors.orangeAccent,
+    background: Color(0xFF121212),
+    onPrimary: Colors.white,
+    onBackground: Colors.white,
+    surface: Color(0xFF1E1E1E),
+    onSurface: Colors.white70,
+  ),
+  textTheme: const TextTheme(
+    bodyLarge: TextStyle(color: Colors.white),
+    bodyMedium: TextStyle(color: Colors.white70),
+  ),
+  floatingActionButtonTheme: FloatingActionButtonThemeData(
+    backgroundColor: kPrimaryColor,
+    foregroundColor: Colors.white,
+  ),
 );

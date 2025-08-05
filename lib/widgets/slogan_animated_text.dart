@@ -12,7 +12,7 @@ class SloganAnimatedText extends StatelessWidget {
         textAlign: TextAlign.center,
         style: TextStyle(
           fontSize: 20,
-          color: Colors.grey.shade800,
+
           // fontFamily: 'GoogleSansCode',
         ),
 
@@ -23,7 +23,7 @@ class SloganAnimatedText extends StatelessWidget {
             animatedTexts: [
               TypewriterAnimatedText(
                 "Just You, Me, and Chat App.",
-                speed: const Duration(milliseconds: 80),
+                speed: const Duration(milliseconds: 70),
               ),
             ],
           ),

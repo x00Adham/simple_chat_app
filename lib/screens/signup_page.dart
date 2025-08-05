@@ -51,7 +51,6 @@ class SignupPage extends StatelessWidget {
                       Expanded(
                         // flex: 5,
                         child: Card(
-                          color: Colors.white,
                           // elevation: 50,
                           margin: EdgeInsets.all(10),
                           shape: RoundedRectangleBorder(

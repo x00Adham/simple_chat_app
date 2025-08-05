@@ -12,7 +12,10 @@ class CustomDrawer extends StatelessWidget {
     return Drawer(
       child: Column(
         children: [
-          Assets.lib.assets.images.blueBack.image(),
+          Theme.of(context).brightness == Brightness.dark
+              ? Assets.lib.assets.images.blueWight.image()
+              : Assets.lib.assets.images.blueWight.image(),
+
           // Divider(height: 5),
           GestureDetector(
             onTap: () {
@@ -20,11 +23,8 @@ class CustomDrawer extends StatelessWidget {
               Navigator.of(context).pop();
             },
             child: ListTile(
-              leading: Icon(Icons.home, color: Colors.grey.shade800),
-              title: Text(
-                "Home",
-                style: TextStyle(fontSize: 20, color: Colors.grey.shade800),
-              ),
+              leading: Icon(Icons.home),
+              title: Text("Home", style: TextStyle(fontSize: 20)),
             ),
           ),
 
@@ -35,11 +35,8 @@ class CustomDrawer extends StatelessWidget {
               Navigator.of(context).pop();
             },
             child: ListTile(
-              leading: Icon(Icons.person, color: Colors.grey.shade800),
-              title: Text(
-                "Profile",
-                style: TextStyle(fontSize: 20, color: Colors.grey.shade800),
-              ),
+              leading: Icon(Icons.person),
+              title: Text("Profile", style: TextStyle(fontSize: 20)),
             ),
           ),
 
@@ -50,11 +47,8 @@ class CustomDrawer extends StatelessWidget {
               Navigator.of(context).pop();
             },
             child: ListTile(
-              leading: Icon(Icons.settings, color: Colors.grey.shade800),
-              title: Text(
-                "Settings",
-                style: TextStyle(fontSize: 20, color: Colors.grey.shade800),
-              ),
+              leading: Icon(Icons.settings),
+              title: Text("Settings", style: TextStyle(fontSize: 20)),
             ),
           ),
           Spacer(),
@@ -66,11 +60,8 @@ class CustomDrawer extends StatelessWidget {
               context.go("/welcome");
             },
             child: ListTile(
-              leading: Icon(Icons.logout, color: Colors.grey.shade800),
-              title: Text(
-                "Logout",
-                style: TextStyle(fontSize: 20, color: Colors.grey.shade800),
-              ),
+              leading: Icon(Icons.logout),
+              title: Text("Logout", style: TextStyle(fontSize: 20)),
             ),
           ),
           SizedBox(height: 40),

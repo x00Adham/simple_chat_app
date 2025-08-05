@@ -4,6 +4,7 @@ import 'package:simple_chat_app/cubit/auth_cubit.dart';
 
 import 'package:simple_chat_app/utils/router/router.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:simple_chat_app/utils/themes/light_mode.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
@@ -21,6 +22,9 @@ class ChatApp extends StatelessWidget {
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
         routerConfig: router,
+        theme: lightTheme,
+        darkTheme: darkTheme,
+        themeMode: ThemeMode.system,
       ),
     );
   }
