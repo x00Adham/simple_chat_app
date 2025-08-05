@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import 'package:simple_chat_app/cubit/auth_cubit.dart';
 import 'package:simple_chat_app/screens/chat_page.dart';
 import 'package:simple_chat_app/services/auth_service.dart';

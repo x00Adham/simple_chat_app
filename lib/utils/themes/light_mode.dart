@@ -15,9 +15,7 @@ final ThemeData lightTheme = ThemeData(
   colorScheme: ColorScheme.light(
     primary: kPrimaryColor,
     secondary: Colors.orangeAccent,
-    background: Colors.white,
     onPrimary: Colors.white,
-    onBackground: Colors.black,
     surface: Colors.white,
     onSurface: Colors.black87,
   ),
@@ -43,9 +41,7 @@ final ThemeData darkTheme = ThemeData(
   colorScheme: ColorScheme.dark(
     primary: kPrimaryColor,
     secondary: Colors.orangeAccent,
-    background: Color(0xFF121212),
     onPrimary: Colors.white,
-    onBackground: Colors.white,
     surface: Color(0xFF1E1E1E),
     onSurface: Colors.white70,
   ),
