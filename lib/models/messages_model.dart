@@ -1,41 +1,29 @@
-class MessageModel {
-  final String id;
-  final String text;
-  final String senderId;
-  final String senderEmail;
-  final DateTime timestamp;
-  final String chatRoomId;
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:convert';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+class MessageModel {
+  final String message;
+  final String senderEmail;
+  final String senderId;
+  final String receiverId;
+  final Timestamp timestamp;
   MessageModel({
-    required this.id,
-    required this.text,
-    required this.senderId,
+    required this.message,
     required this.senderEmail,
+    required this.senderId,
+    required this.receiverId,
     required this.timestamp,
-    required this.chatRoomId,
   });
 
-  // Convert Message to Map for Firebase
   Map<String, dynamic> toMap() {
-    return {
-      'id': id,
-      'text': text,
+    return <String, dynamic>{
+      'message': message,
+      'senderEmail': senderEmail,
       'senderId': senderId,
-      'senderName': senderEmail,
-      'timestamp': timestamp.millisecondsSinceEpoch,
-      'chatRoomId': chatRoomId,
+      'recevierId': receiverId,
+      'timestamp': timestamp,
     };
-  }
-
-  // Create Message from Firebase Map
-  factory MessageModel.fromMap(Map<String, dynamic> map) {
-    return MessageModel(
-      id: map['id'] ?? '',
-      text: map['text'] ?? '',
-      senderId: map['senderId'] ?? '',
-      senderEmail: map['senderName'] ?? '',
-      timestamp: DateTime.fromMillisecondsSinceEpoch(map['timestamp'] ?? 0),
-      chatRoomId: map['chatRoomId'] ?? '',
-    );
   }
 }
