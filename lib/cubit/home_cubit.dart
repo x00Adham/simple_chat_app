@@ -1,8 +1,6 @@
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:meta/meta.dart';
 import 'package:simple_chat_app/services/chat_Service.dart';
 import 'package:simple_chat_app/services/auth_service.dart';
